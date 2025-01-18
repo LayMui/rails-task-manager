@@ -4,7 +4,7 @@
 <% @tasks.each do |task| %>
 
  <input type="checkbox" class="red-input" name="task_<%= task.id %>" <%= task.completed ? "checked" : "" %> />
-    <label for="task_<%= task.id %>" id="checkbox_label"><%= link_to task.title , task_detail_path(task) %></label></br>
+    <label for="task_<%= task.id %>" id="checkbox_label"><%= link_to task.title , show_task_path(task) %></label></br>
 
 <% end %>
 </div>

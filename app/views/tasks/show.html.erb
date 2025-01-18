@@ -1,7 +1,7 @@
 <div class="container">
 <h1>Task Details</h1>
 <div class="d-flex justify-content-end w-50">
-<button class="btn btn-primary">+Edit this task</button>
+<%= link_to "+Edit this task", edit_task_path(@task),class: "btn btn-primary" %>
 </div>
  <div class="col-sm-4 detail w-50"><p><%= @task.details %></p></div>
 
@@ -14,5 +14,6 @@
     <label for="task_" id="checkbox_label">This task is not completed</label></br>
 <% end %>
 
-<%= link_to "Back to tasks", tasks_path %>
+<%= link_to "Back to tasks", tasks_path %></br>
+<%= link_to "Back", "javascript:history.back()"%>
 </div>
