@@ -1,5 +1,9 @@
+<div class="container">
 <h1>Task Details</h1>
- <div class="col-sm-4 detail"><p><%= @task.details %></p></div>
+<div class="d-flex justify-content-end w-50">
+<button class="btn btn-primary">+Edit this task</button>
+</div>
+ <div class="col-sm-4 detail w-50"><p><%= @task.details %></p></div>
 
  <% if @task.completed %>
   <input type="checkbox" class="green-input" checked name="task" disabled/>
@@ -9,4 +13,6 @@
  <input type="checkbox" class="red-input" checked name="task" disabled/>
     <label for="task_" id="checkbox_label">This task is not completed</label></br>
 <% end %>
+
 <%= link_to "Back to tasks", tasks_path %>
+</div>
