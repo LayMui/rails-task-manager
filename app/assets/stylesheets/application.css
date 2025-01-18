@@ -8,3 +8,26 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+
+ .red-input {
+  accent-color: #9d3039;
+ }
+
+ .green-input {
+  accent-color: #60a648;
+ }
+
+ #checkbox_label {
+  color: red;
+ }
+
+ #checkbox_label_green {
+  color: #60a648;
+ }
+
+ .detail {
+  background-color: #cadfc3;
+  padding: 10px;
+  margin-top: 10px;
+ }

@@ -1,0 +1,12 @@
+<h1>Task Details</h1>
+ <div class="col-sm-4 detail"><p><%= @task.details %></p></div>
+
+ <% if @task.completed %>
+  <input type="checkbox" class="green-input" checked name="task" disabled/>
+    <label for="task" id="checkbox_label_green">This task is completed</label></br>
+
+<% else %>
+ <input type="checkbox" class="red-input" checked name="task" disabled/>
+    <label for="task_" id="checkbox_label">This task is not completed</label></br>
+<% end %>
+<%= link_to "Back to tasks", tasks_path %>
