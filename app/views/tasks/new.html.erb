@@ -1,0 +1,13 @@
+<div class="container">
+  <%= form_with model: @task do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control w-50 bg-light" %>
+
+    <%= f.label :details %>
+    <%= f.text_field :details, class: "form-control"%>
+    <%= f.submit "Create Task", class: "btn btn-primary mt-4" %>
+  <% end %>
+<div class="mt-4">
+<%= link_to "Back to tasks", tasks_path%>
+</div>
+</div>
