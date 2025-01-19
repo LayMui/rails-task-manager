@@ -10,7 +10,6 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-
   def new
     @task = Task.new
   end
@@ -29,7 +28,7 @@ end
 
 def update
   @task.update(task_params)
-  redirect_to task_path(@task)
+  redirect_to tasks_path(@task)
 end
 
 private

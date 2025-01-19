@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Task Details</h1>
+<h1><%= @task.title %></h1>
 <div class="d-flex justify-content-end w-50">
 <%= link_to "+Edit this task", edit_task_path(@task),class: "btn btn-primary" %>
 </div>

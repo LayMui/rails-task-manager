@@ -11,17 +11,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :tasks
+  # resources :tasks
   # resources :tasks, only: [ :create, :index, :destroy ]
-  # get "tasks", to: "tasks#index"
+  get "tasks", to: "tasks#index"
 
-  # get "tasks/new", to: "tasks#new", as: :new_task
-  # post "tasks", to: "tasks#create"
+  get "tasks/new", to: "tasks#new", as: :new_task
+  post "tasks", to: "tasks#create"
 
   get "tasks/:id", to: "tasks#show", as: :show_task
-  # # Update
-  # get    "tasks/:id/edit", to: "tasks#edit", as: :edit_task
-  # patch  "tasks/:id",      to: "tasks#update", as: :update_task
-  # # Delete
-  # delete "tasks/:id",      to: "tasks#destroy"
+  # Update
+  get "tasks/:id/edit", to: "tasks#edit", as: :edit_task
+  patch "tasks/:id/edit", to: "tasks#update"
+  # Delete
+  delete "tasks/:id",      to: "tasks#destroy"
 end
