@@ -13,29 +13,31 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
   end
-end
 
-def show
-end
+  def show
+  end
 
-def edit
-end
+  def edit
+  end
 
-def destroy
-  @task.destroy
-  redirect_to tasks_path,  status: :see_other
-end
+  def update
+    @task.update(task_params)
+    redirect_to tasks_path(@task)
+  end
 
-def update
-  @task.update(task_params)
-  redirect_to tasks_path(@task)
-end
 
-private
-def set_task
-  @task = Task.find(params[:id])
-end
+  def destroy
+    @task.destroy
+    redirect_to tasks_path,  status: :see_other
+  end
 
-def task_params
-  params.require(:task).permit(:title, :details)
+
+  private
+  def set_task
+    @task = Task.find(params[:id])
+  end
+
+  def task_params
+    params.require(:task).permit(:title, :details)
+  end
 end
