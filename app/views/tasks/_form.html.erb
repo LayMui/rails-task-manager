@@ -1,12 +1,20 @@
-<div class="container">
-  <%= form_with model: task do |f| %>
+<%= form_with model: @task do |f| %>
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control w-50 bg-light" %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :details %>
-    <%= f.text_field :details, class: "form-control"%>
-    <%= f.submit task.id ? "Update" : "Create", class: "btn btn-primary mt-4" %>
+    <%= f.text_area :details, class: 'form-control' %>
+  </div>
+
+  <% unless f.object.new_record? %>
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :completed %> Completed
+      </label>
+    </div>
   <% end %>
-<div class="mt-4">
-<%= link_to "Back to tasks", tasks_path%>
-</div>
-</div>
+  <%= f.submit class: 'btn btn-primary mt-3' %>
+<% end %>

@@ -13,6 +13,10 @@
  .red-input {
   accent-color: #9d3039;
  }
+ #danger-label {
+  font-weight: bold;
+  color: #db620c;
+ }
 
  .green-input {
   accent-color: #60a648;

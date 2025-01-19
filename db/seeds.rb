@@ -9,3 +9,5 @@
 #   end
 Task.create(title: "Laundry", details: "Do not mix colors!")
 Task.create(title: "Studying", details: "A lot of flashcards to do", completed: true)
+Task.create(title: "Shopping", details: "Buy groceries", completed: false)
+Task.create(title: "Cleaning", details: "Clean the house", completed: false)

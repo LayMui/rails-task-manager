@@ -1,12 +1,22 @@
-<div class="container">
+<div class="container mt-5">
 <h1>My Tasks</h1>
 <div style="margin-bottom: 50px;">
 <% @tasks.each do |task| %>
 
  <input type="checkbox" class="red-input" name="task_<%= task.id %>" <%= task.completed ? "checked" : "" %> />
-    <label for="task_<%= task.id %>" id="checkbox_label"><%= link_to task.title , show_task_path(task) %></label></br>
+    <label for="task_<%= task.id %>" id="checkbox_label"><%= link_to task.title , task_path(task.id) %></label>
+       <%= link_to task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{task.title}?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %></br>
 
 <% end %>
+
+<input type="checkbox" name="task_all"/>
+  <label for="task_all" id="danger-label">Delete All</label>
+      <%= link_to delete_all_tasks_path, data: {turbo_method: :delete, turbo_confirm: "Delete All"} do %>
+      <i class="fa-regular fa-trash-can"></i>
+  <% end %>
+
 </div>
 
 <%# link_to task.title , task_details_path(task) %>
