@@ -35,6 +35,7 @@ class TasksController < ApplicationController
   private
   def set_task
     @task = Task.find(params[:id])
+    @name = "Laymui"
   end
 
   def task_params
